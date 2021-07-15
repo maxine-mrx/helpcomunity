@@ -65,7 +65,8 @@ def xsSR(a,b):
 				urlAtack = urljoin(str(a),xparams)
 			#print(urlAtack)
 			
-		req = requests.get(urlAtack,cookies=cookies).content
+		req = requests.get(urlAtack,#cookies=cookies
+                ).content
 		#print(req)	
 		if 'maxine' in req.decode(): 
 			print()
@@ -101,7 +102,7 @@ if __name__ == '__main__':
 
 	method = 'get'
 	
-	cookies = dict(PHPSESSID='fbcd200irn3boacre2701rvtr7',security="low")
+	#cookies = dict(PHPSESSID='fbcd200irn3boacre2701rvtr7',security="low")
 	
 	banning('m4x1n3')
 
