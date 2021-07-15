@@ -29,7 +29,7 @@ def requester(url,method,**kargs):
 
 	'''
 
-	cookies = dict(PHPSESSID='fbcd200irn3boacre2701rvtr7',security="low")
+	#cookies = dict(PHPSESSID='fbcd200irn3boacre2701rvtr7',security="low")
 	
 	#################  url check  ################
 	
@@ -43,13 +43,11 @@ def requester(url,method,**kargs):
 
 	
 	if method == 'get' or method == 'GET':
-		req = requests.get(url, params=None, #allow_redirects = True, cookies e ++
-			cookies=cookies)
+		req = requests.get(url, params=None)
 
 
 	elif method == 'post' or method == 'POST':
-		req = requests.post(url, data=None, #allow_redirects = True,#cookies e ++
-			cookies=cookies)
+		req = requests.post(url, data=None)
 		
 	else:
 		req ='{} method not suport ...'.format(red)
