@@ -17,7 +17,7 @@ from colors import red,green,blue,white
 
 
 
-def requester(url,method,**kargs):
+def requester(url,method):
 	
 	
 	'''
@@ -28,26 +28,24 @@ def requester(url,method,**kargs):
 		kkkkkkkkkkkkkkkkkkkkk me perdi no codigo :)
 
 	'''
-
-	#cookies = dict(PHPSESSID='fbcd200irn3boacre2701rvtr7',security="low")
 	
 	#################  url check  ################
 	
-	if not url.startswith('http://'): # if not url.startswith('https://'):
-		url = 'http://' + str(url)    # url = 'https://' + str(url)
+	if not url.startswith('https://'): # if not url.startswith('https://'):
+		url = 'https://'+ str(url)    # url = 'https://' + str(url)
 
 	if not url.endswith('/'):
-		url = str(url)+'/'
+		url = str(url)+ '/'
 	
 	################ Method check ################
 
 	
 	if method == 'get' or method == 'GET':
-		req = requests.get(url, params=None)
+		req = requests.get(url)
 
 
 	elif method == 'post' or method == 'POST':
-		req = requests.post(url, data=None)
+		req = requests.post(url)
 		
 	else:
 		req ='{} method not suport ...'.format(red)
@@ -55,7 +53,7 @@ def requester(url,method,**kargs):
 
 	################ Header check ################
 	
-
+	
 	header = input('{} [~] Verificate Header Response ? (Y | N ) [~]: '.format(blue))
 	
 
@@ -66,11 +64,11 @@ def requester(url,method,**kargs):
 	else:
 		pass
 
+	
 
-
-	return[url,req]
+	return [url , req]
 
 if __name__ == '__main__':
 	
+	#print(requester('https://xss-game.appspot.com/level1/','get'))
 	pass
-
