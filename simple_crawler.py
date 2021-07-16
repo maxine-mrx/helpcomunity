@@ -14,19 +14,18 @@ from bs4 import BeautifulSoup as beaut
 
 from requesting import requester 
 
-
-
-cookies = dict(PHPSESSID='fbcd200irn3boacre2701rvtr7',security="low")
+import requests
 
 
 def find_form(req):
-
+	
 	data = req.content
 	soup = beaut(data,'html.parser')
 	form = soup.find_all('form')
 	
-	fmethod = soup.form.attrs.get('method')
-	return form, fmethod
+	#fmethod = soup.form[0].attrs.get('method')
+	
+	return form #, fmethod
 
 
 def find_links(links):
@@ -69,5 +68,5 @@ def find_select(req):
 	return selects_names	
 
 if __name__ == '__main__':
+	
 	pass
-
